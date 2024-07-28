@@ -1,0 +1,84 @@
+
+@host = http://localhost:5073
+
+###		FAILS
+{{host}}/GetPersonByID?id=1
+
+###		WORKS
+{{host}}/GetPersonByID/2
+
+###		WORKS
+{{host}}/GetPersonByID/0
+
+###		WORKS
+{{host}}/GetPersonByID/
+
+###		WORKS
+{{host}}/GetPersons/
+
+###		WORKS
+###		Note: The Id is NOT passed.
+###				The response contains the new ID 
+POST {{host}}/InsertPerson
+Content-Type: application/json
+
+{
+	"firstName": "Kevin",
+	"lastName": "Bowe",
+	"ssn": "000110000",
+	"insertDte_sys": "1900-01-01T00:00:00.000Z",
+	"doB_sys": "1900-01-01",
+	"workStartsAt_sys": "08:00:00",
+	"currentTime_sys": "1900-01-01T00:00:00.000Z"
+}
+
+
+###		WORKS
+###		Note: The Id is REQUIRED.
+###				The response only returns the 200 code 
+PUT {{host}}/UpdatePerson
+Content-Type: application/json
+
+{
+	"id": "28",
+	"firstName": "Kevin",
+	"lastName": "Bowe1_MOD1_Modified",
+	"ssn": "333225555",
+	"insertDte_sys": "2024-06-13T00:00:00.000Z",
+	"doB_sys": "1957-08-22",
+	"workStartsAt_sys": "07:00:00",
+	"currentTime_sys": "2024-06-13T12:06:45.111Z"
+}
+
+
+###		WORKS
+###		Note: The Id is REQUIRED.
+###				The response only returns the 200 code 
+DELETE {{host}}/DeletePerson
+Content-Type: application/json
+
+{
+	"id": "28",
+	"firstName": "Kevin",
+	"lastName": "Bowe5_MOD5",
+	"ssn": "333225555",
+	"insertDte_sys": "2024-06-13T00:00:00.000Z",
+	"doB_sys": "1957-08-22",
+	"workStartsAt_sys": "07:00:00",
+	"currentTime_sys": "2024-06-13T12:06:45.111Z"
+}
+
+###		Works
+###		Note: The Id param is REQUIRED.
+###				The response only returns the 200 code 
+DELETE {{host}}/DeletePersonById/113
+
+
+
+
+################################################################################
+###		FAILS // Swagger must be avtivated
+http://localhost:5073/swagger/index.html
+
+###		FAILS // Swagger must be avtivated
+{{host}}/swagger/index.html
