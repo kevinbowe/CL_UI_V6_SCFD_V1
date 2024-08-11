@@ -10,6 +10,7 @@ public static class DeletePerson
 	public static async Task<string> DeletePersonAsync(HttpClient client)
 	{
 		client.DefaultRequestHeaders.Add("Put", "application/json");
+		// client.BaseAddress = new Uri("http://localhost:5000");
 		client.BaseAddress = new Uri("http://localhost:5073");
 
 		var jsonObj = new {

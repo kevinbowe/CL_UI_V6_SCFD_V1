@@ -12,6 +12,7 @@ public class InsertPerson
 	public static async Task<PersonResponse> InsertPersonAsync(HttpClient client, Person inputPerson)
 	{
 		client.DefaultRequestHeaders.Add("Post", "application/json");
+		// client.BaseAddress = new Uri("http://localhost:5000");
 		client.BaseAddress = new Uri("http://localhost:5073");
 
 		var jsonContent = JsonContent.Create(inputPerson);

@@ -11,6 +11,7 @@ public static class GetPersonById
 	public static async Task<PersonResponse> GetPersonByIdAsync(HttpClient client, int Id)
 	{
 		client.DefaultRequestHeaders.Add("Get", "application/json");
+		// client.BaseAddress = new Uri("http://localhost:5000");
 		client.BaseAddress = new Uri("http://localhost:5073");
 		HttpResponseMessage response;
 

@@ -14,6 +14,7 @@ public static class GetPersons
 	public static async Task<PersonListResponse> GetPersonsAsync(HttpClient client)
 	{
 		client.DefaultRequestHeaders.Add("Get", "application/json");
+		// client.BaseAddress = new Uri("http://localhost:5000");
 		client.BaseAddress = new Uri("http://localhost:5073");
 		using HttpResponseMessage response = await client.GetAsync("GetPersons/");
 

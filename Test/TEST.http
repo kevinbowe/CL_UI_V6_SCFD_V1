@@ -1,5 +1,9 @@
-
+#	BROKEN - 8/10 
 @host = http://localhost:5073
+#	Fixed - 8/10
+# @host = http://localhost:5000
+
+
 
 ###		FAILS
 {{host}}/GetPersonByID?id=1
@@ -11,7 +15,7 @@
 {{host}}/GetPersonByID/0
 
 ###		WORKS
-{{host}}/GetPersonByID/
+{{host}}/GetPersonByID/1
 
 ###		WORKS
 {{host}}/GetPersons/
@@ -78,6 +82,7 @@ DELETE {{host}}/DeletePersonById/113
 
 ################################################################################
 ###		FAILS // Swagger must be avtivated
+# http://localhost:5000/swagger/index.html
 http://localhost:5073/swagger/index.html
 
 ###		FAILS // Swagger must be avtivated
