@@ -1,12 +1,5 @@
-#	BROKEN - 8/10 
-@host = http://localhost:5073
-#	Fixed - 8/10
-# @host = http://localhost:5000
 
-
-
-###		FAILS
-{{host}}/GetPersonByID?id=1
+@host = http://localhost:8080
 
 ###		WORKS
 {{host}}/GetPersonByID/2
@@ -36,7 +29,6 @@ Content-Type: application/json
 	"currentTime_sys": "1900-01-01T00:00:00.000Z"
 }
 
-
 ###		WORKS
 ###		Note: The Id is REQUIRED.
 ###				The response only returns the 200 code 
@@ -44,7 +36,7 @@ PUT {{host}}/UpdatePerson
 Content-Type: application/json
 
 {
-	"id": "28",
+	"id": "4",
 	"firstName": "Kevin",
 	"lastName": "Bowe1_MOD1_Modified",
 	"ssn": "333225555",
@@ -54,28 +46,32 @@ Content-Type: application/json
 	"currentTime_sys": "2024-06-13T12:06:45.111Z"
 }
 
-
-###		WORKS
-###		Note: The Id is REQUIRED.
-###				The response only returns the 200 code 
-DELETE {{host}}/DeletePerson
-Content-Type: application/json
-
-{
-	"id": "28",
-	"firstName": "Kevin",
-	"lastName": "Bowe5_MOD5",
-	"ssn": "333225555",
-	"insertDte_sys": "2024-06-13T00:00:00.000Z",
-	"doB_sys": "1957-08-22",
-	"workStartsAt_sys": "07:00:00",
-	"currentTime_sys": "2024-06-13T12:06:45.111Z"
-}
-
 ###		Works
 ###		Note: The Id param is REQUIRED.
+###				This Id must exist
 ###				The response only returns the 200 code 
-DELETE {{host}}/DeletePersonById/113
+# DELETE {{host}}/DeletePersonById/4
+
+DELETE {{host}}/DeletePersonById/4
+
+###		DISABLED
+###
+###		Note: The Id is REQUIRED.
+###				The response only returns the 200 code 
+# DELETE {{host}}/DeletePerson
+# Content-Type: application/json
+# 
+# {
+# 	"id": "4",
+# 	"firstName": "Kevin",
+# 	"lastName": "Bowe5_MOD5",
+# 	"ssn": "333225555",
+# 	"insertDte_sys": "2024-06-13T00:00:00.000Z",
+# 	"doB_sys": "1957-08-22",
+# 	"workStartsAt_sys": "07:00:00",
+# 	"currentTime_sys": "2024-06-13T12:06:45.111Z"
+# }
+
 
 
 

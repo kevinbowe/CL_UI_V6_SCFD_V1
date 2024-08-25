@@ -11,8 +11,8 @@ public class DeletePersonById
 	public static async Task<string> DeletePersonByIdAsync(HttpClient client, int Id)
 	{
 		client.DefaultRequestHeaders.Add("Get", "application/json");
-		// client.BaseAddress = new Uri("http://localhost:5000");
-		client.BaseAddress = new Uri("http://localhost:5073");
+		client.BaseAddress = new Uri("http://localhost:8080");
+
 		HttpResponseMessage response;
 
 		try
@@ -44,8 +44,8 @@ public class DeletePersonById
 	public static async Task<PersonResponse> DeletePersonByIdTWOAsync(HttpClient client, int Id)
 	{
 		client.DefaultRequestHeaders.Add("Get", "application/json");
-		// client.BaseAddress = new Uri("http://localhost:5000");
-		client.BaseAddress = new Uri("http://localhost:5073");
+		client.BaseAddress = new Uri("http://localhost:8080");
+		
 		HttpResponseMessage response = await client.DeleteAsync($"DeletePersonByIdTWO/{Id}");
 		response.EnsureSuccessStatusCode();
 
