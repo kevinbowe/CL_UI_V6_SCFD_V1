@@ -72,6 +72,7 @@ public class ProcessWorkers
 					propertyList = new[] { "Id", "FirstName", "LastName", "SSN", "InsertDte_sys", "doB_sys", "WorkStartsAt_sys" };
 					strBuilder = personResponse.Person.OutputProperties(propertyList, "portrait");
 					Console.WriteLine(strBuilder);
+					Console.WriteLine();
 				}
 				break;
 
